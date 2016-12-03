@@ -94,3 +94,12 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+
+$db["cassandra"] = [
+    "hostname"      =>      "localhost",
+    "port"          =>      9042,
+    "username"      =>      "kamyar",
+    "password"      =>      "root",
+    "database"      =>      "devdb1",
+    "serverid"      =>      "1"
+];

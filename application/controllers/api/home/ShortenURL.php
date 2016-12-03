@@ -26,8 +26,25 @@ class ShortenURL extends Utils {
         ];
         
         $url = $this->_get_args["url"];
+        $url_md5 = NULL;
         
-        $obj["data"] = $url;
+        try {
+            if(isset($url) && !empty($url) && !is_null($url)) {
+                $url_md5 = md5($url);
+            } else {
+                throw new Exception("Missing argument: url");
+            }
+        } catch (Exception $ex) {
+            $obj["msg"] = $ex->getMessage();
+            $this->output_json($obj);
+            return;
+        }
+        
+        $conobj = $this->cs_connect();
+        $dbc = $conobj["session"];
+        
+        $this->load->model("ShortenURLModel");
+        $obj = $this->ShortenURLModel->getShortURL($dbc, $url, $url_md5);
         
         $this->output_json($obj);
     }
