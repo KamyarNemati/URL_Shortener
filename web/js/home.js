@@ -8,7 +8,14 @@
  * @author Kamyar
  */
 
-function getShortURL(url, callback) {
+/**
+ * 
+ * @param {type} url
+ * @param {type} callback
+ * @returns {undefined}
+ * @author Kamyar
+ */
+function getShortURL(url, callback) { //Callback function to make an AJAX call to the API: 'ShortenURL'
     $.ajax({
         url: "api/home/ShortenURL",
         type: 'GET',
@@ -27,10 +34,10 @@ function getShortURL(url, callback) {
     });
 }
 
-$(document).on('click', '#btn_shorten', function() {
+$(document).on('click', '#btn_shorten', function() { //On shortening action
     $('#showTime').empty();
     var url = $('#input_url').val();
-    getShortURL(url, function(obj) {
+    getShortURL(url, function(obj) { //Callback function
         var html = '';
         if(obj.stat === 0) {
             html += '<a href="' + obj.data.short_url + '" class="btn btn-default btn-lg">' + obj.data.short_url + '</a>';

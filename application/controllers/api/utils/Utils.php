@@ -31,15 +31,15 @@ class Utils extends REST_Controller {
      * @author Kamyar
      */
     public function cs_connect() {
-        include APPPATH . '/config/database.php';
-        $cs = $db["cassandra"];
+        include APPPATH . '/config/database.php'; //Reading the database config file
+        $cs = $db["cassandra"]; //Reading the Cassandra database configuration
         $cluster = Cassandra::cluster()
                 ->withContactPoints($cs["hostname"])
                 ->withPort($cs["port"])
                 ->withDefaultConsistency(Cassandra::CONSISTENCY_QUORUM)
                 ->withCredentials($cs["username"], $cs["password"])
-                ->build();
-        $connection = [
+                ->build(); //Connection Establishment Function
+        $connection = [ //Connection information
             "session"       =>      $cluster->connect($cs["database"]),
             "svrhost"       =>      $cs["hostname"],
             "svrid"         =>      $cs["serverid"]
