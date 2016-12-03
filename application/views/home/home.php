@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Grayscale - Start Bootstrap Theme</title>
+    <title>URL_Shortener</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="web/assets/bootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -74,9 +74,19 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">Grayscale</h1>
-                        <p class="intro-text">A free, responsive, one page Bootstrap theme.
-                            <br>Created by Start Bootstrap.</p>
+                        <h1 class="brand-heading">URL Shortener</h1>
+                        <p class="intro-text">Shorten your Universal Resource Locator in one click.</p>
+                        <div class="row">
+                            <input type="text" id="input_url" class="col-md-12 form-control">
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <button id="btn_shorten" class="btn btn-success">Shorten</button>
+                        </div>
+                        <br/>
+                        <div class="row" id="showTime">
+                            <!-- link to the shortened URL -->
+                        </div>
                         <a href="#about" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
@@ -158,6 +168,8 @@
 
     <!-- Theme JavaScript -->
     <script src="web/assets/bootstrap/js/grayscale.min.js"></script>
+    
+    <script src="web/js/home.js"></script>
 
 </body>
 
