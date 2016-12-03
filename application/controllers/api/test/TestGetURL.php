@@ -30,7 +30,7 @@
         
 <table>
     <tr>
-        <td>url_time (bigint)</td>
+        <td>url_time (text)</td>
         <td><input style="width:500px;" type="edit" name="shortUrl" value=""></td>
     </tr>
 <!--    <tr>

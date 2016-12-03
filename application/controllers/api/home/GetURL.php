@@ -32,13 +32,7 @@ class GetURL extends Utils {
         
         //Check if the input is valid
         try {
-            if(isset($url_time) && !empty($url_time) && !is_null($url_time)) {
-                if(!is_numeric($url_time)) {
-                    throw new Exception("Invalid input.");
-                } else {
-                    $url_time = intval($url_time);
-                }
-            } else {
+            if(!(isset($url_time) && !empty($url_time) && !is_null($url_time))) {
                 throw new Exception("Missing argument.");
             }
         } catch (Exception $ex) { //Just in case of any invalid input
